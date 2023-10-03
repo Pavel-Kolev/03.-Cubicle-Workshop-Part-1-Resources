@@ -3,20 +3,14 @@ const fs =require("fs")
 const cubeFile=fs.readFileSync("./src/config/database.json")
 const cubes=JSON.parse(cubeFile)
 let allCubes=cubes.cube
+const Cube=require("./../models/Cube.js")
 
 
-
-exports.create = (cubeData) => {
-    const newCube = {
-        id: uniqueid(),
-        ...cubeData
-
-    }
+exports.create = async (cubeData) => {
+   const cube=await Cube.create(cubeData)
    
-    allCubes.push(newCube)
-    cubeJSON=JSON.stringify(cubes)
-    return fs.writeFileSync("./src/config/database.json",cubeJSON)
     
+    return cube;
    
 }
 
@@ -24,7 +18,7 @@ exports.getAll = (search, from, to) => {
   
     let filtercubes=[...allCubes]
 console.log(search)
-console.log(filtercubes[0].name)
+console.log(filtercubes.name)
 
     if(search){
         filtercubes=filtercubes.filter((cube)=>cube.name.includes(search.toLowerCase()))
