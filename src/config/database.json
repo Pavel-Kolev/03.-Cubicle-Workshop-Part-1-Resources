@@ -1,0 +1,32 @@
+{
+  "cube": [
+    {
+      "id": "ekggvoh24ln3592ou",
+      "name": "ggasdf",
+      "description": "gasfdas",
+      " imageUrl": "q213asd",
+      "difficultyLevel": 1
+    },
+    {
+      "id": "ekggvoh24ln35az9s",
+      "name": "fsgad",
+      "description": "sabhasfas",
+      "imageUrl": "gsadasd",
+      "difficultyLevel": 4
+    },
+    {
+      "id": "ekggvomvkln397ye2",
+      "name": "asd",
+      "description": "dsad",
+      "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Scramble.svg/1200px-Scramble.svg.png",
+      "difficultyLevel": 1
+    },
+    {
+      "id": "ekggvo97sln39ddjd",
+      "name": "sad",
+      "description": "gasd",
+      "imageUrl": "gasd",
+      "difficultyLevel": 1
+    }
+  ]
+}
