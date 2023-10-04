@@ -1,16 +1,15 @@
-const router =require("express").Router()
- 
-const accService=require("../services/accessoryService")
+const router = require("express").Router();
 
-router.get("/create",(req,res)=>{
-    res.render("accesory/create")
-})
-router.post("/create",async (req,res)=>{
+const accService = require("../services/accessoryService");
 
-const{name,description,imageUrl}=req.body
+router.get("/create", (req, res) => {
+  res.render("accesory/create");
+});
+router.post("/create", async (req, res) => {
+  const { name, description, imageUrl } = req.body;
 
-await accService.create({name,description,imageUrl})
-res.redirect('/')
-})
+  await accService.create({ name, description, imageUrl });
+  res.redirect("/");
+});
 
-module.exports =router;
+module.exports = router;
