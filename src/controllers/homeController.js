@@ -10,7 +10,7 @@ const cubeService=require("../services/cubeService")
  router.get('/about',(req, res) => {
    res.render("about")
 })
-router.get('404',(req, res) => {
+router.get('/404',(req, res) => {
    res.render("404")
 })
 
