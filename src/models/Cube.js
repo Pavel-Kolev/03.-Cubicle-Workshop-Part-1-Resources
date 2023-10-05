@@ -9,7 +9,7 @@ const cubeSchema=new mongoose.Schema({
 
     accessories:[{
         type:mongoose.Types.ObjectId,
-        ref:"Accessory" // name of model
+        ref:"acc" // name of model
     }]
 })
 

@@ -27,7 +27,7 @@ exports.getAll = async (search, from, to) => {
   return filtercubes;
 };
 exports.getSingleCube = (id) => {
-  return Cube.findById(id);
+  return Cube.findById(id).populate("accessories")
 };
 exports.attachAccessory = async (cubeId,accessoryId) => {
 const cube =await this.getSingleCube(cubeId)
