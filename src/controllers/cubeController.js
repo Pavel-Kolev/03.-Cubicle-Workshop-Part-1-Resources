@@ -31,9 +31,10 @@ console.log(accessories)
 router.get("/:cubeId/attach-accessory", async (req, res) => {
   const { cubeId } = req.params;
   const cube = await cubeService.getSingleCube(cubeId).lean();
+  const accessoryIds=cube.accessories?cube.accessories.map((a)=>a._id):[];
+  const accesory = await accessoryService.getWithoutOwned(accessoryIds).lean();
 
-  const accesory = await accessoryService.getAll().lean();
-const accessoryIds=cube.accessories.map((a)=>a._id)
+console.log(accessoryIds)
   const hasAccessories = accesory.length > 0;
   res.render("accesory/attach", { cube, accesory, hasAccessories });
 });
