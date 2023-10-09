@@ -7,11 +7,14 @@ router.get("/create", (req, res) => {
 router.post("/create", async (req, res) => {
   const { name, description, imageUrl, difficultyLevel } = req.body;
 
+
+
   await cubeService.create({
     name,
     description,
     imageUrl,
     difficultyLevel: Number(difficultyLevel),
+    owner:req.user,
   });
   res.redirect("/");
 });
@@ -47,4 +50,12 @@ router.post("/:cubeId/attach-accessory", async (req, res) => {
 
   res.redirect(`/cubes/${cubeId}/details`);
 });
+router.get('/:cubeId/edit',(req,res)=>
+{
+  res.render("cube/edit")
+})
+router.get('/:cubeId/delete',(req,res)=>
+{
+  res.render("cube/delete")
+})
 module.exports = router;

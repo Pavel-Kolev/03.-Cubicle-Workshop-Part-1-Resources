@@ -11,6 +11,10 @@ const cubeSchema=new mongoose.Schema({
         type:mongoose.Types.ObjectId,
         ref:"acc" // name of model
     }]
+    ,owner:{
+        type:mongoose.Types.ObjectId,
+        ref:"User"
+    }
 })
 
 
