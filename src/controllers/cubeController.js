@@ -23,7 +23,7 @@ router.get("/:cubeId/details", async (req, res) => {
     return;
   }
   const accessories=cube.accessories
-console.log(accessories)
+
   const hasAccessories=accessories===undefined?false:accessories.length>0
   res.render("cube/details", { cube,accessories,hasAccessories });
 });
