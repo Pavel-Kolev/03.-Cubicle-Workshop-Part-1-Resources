@@ -13,7 +13,7 @@ exports.auth = async (req, res, next) => {
     }
     catch(error){
         console.log({error})
-        res.cookieClear('auth')
+        res.clearCookie('auth')
         res.redirect('/users/login')
     }
   
@@ -25,3 +25,8 @@ exports.auth = async (req, res, next) => {
 
   
 };
+exports.isAuthenticated=(req,res,next)=>{
+    if(!req.user){
+        return res.redirect('/users/login')
+    }
+}
