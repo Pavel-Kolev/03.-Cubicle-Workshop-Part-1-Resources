@@ -1,11 +1,11 @@
+const User =require("../models/User")
+
+
+
+exports.register=(userData)=>{
+return User.create(userData)
 
 
 
 
-exports.register=(username,password,repeatPassword)=>{
-
-
-
-
-    
 }

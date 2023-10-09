@@ -1,16 +1,19 @@
-const router=require("express").Router()
+const router = require("express").Router();
+const userReg = require("../services/userService");
+router.get("/register", (req, res) => {
+  res.render("user/register");
+});
+router.post("/register", async (req, res) => {
 
-router.get('/register',(req,res)=>{
-    res.render('user/register')
-})
-router.post('/register',(req,res)=>{
-    console.log({inputData:req.body})
-    const{username,password,repeatPassword}=req.body;
-    res.redirect('/users/login')
-})
+  const { username, password, repeatPassword } = req.body;
 
-router.get('/login',(req,res)=>{
-    res.render('user/login')
-})
+  await userReg.register({ username, password, repeatPassword });
 
- module.exports=router
+  res.redirect("/users/login");
+});
+
+router.get("/login", (req, res) => {
+  res.render("user/login");
+});
+
+module.exports = router;
