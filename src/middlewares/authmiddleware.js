@@ -7,6 +7,8 @@ exports.auth = async (req, res, next) => {
     try{
         const decodeToken=await jwt.verify(token,SECRET)
         req.user=decodeToken
+        res.locals.user=decodeToken
+        res.locals.isAuthenticated=true;
         next();
     }
     catch(error){
