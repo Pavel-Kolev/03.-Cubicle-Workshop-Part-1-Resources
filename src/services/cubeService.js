@@ -36,3 +36,5 @@ return cube.save()
 
 };
 exports.update=async(id,cubeData)=>Cube.findByIdAndUpdate(id,cubeData)
+
+exports.delete=async(id)=>Cube.findByIdAndDelete(id)
