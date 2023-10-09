@@ -35,3 +35,4 @@ cube.accessories.push(accessoryId)
 return cube.save()
 
 };
+exports.update=async(id,cubeData)=>Cube.findByIdAndUpdate(id,cubeData)
